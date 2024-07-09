@@ -232,7 +232,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 ```
 ## refactoring using import map
 Create a import-map.json file in root directory
-import-map.json file
+importmap.json file
 
 ```json
 {
@@ -259,7 +259,7 @@ Now refactored index.hmtl using the import maps
     <link rel="icon" type="image/svg+xml" href="https://cdn-icons-png.flaticon.com/512/1099/1099680.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SportBuzz</title>
-    <script type="importmap" src="/import-map.json"></script>
+    <script type="importmap" src="/importmap.json"></script>
 </head>
 
 <body>
