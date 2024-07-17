@@ -267,13 +267,14 @@ importmap.json file
 {
   "imports": {
     "/src/": "./src/",
-    "react": "https://cdn.skypack.dev/react",
-    "react-dom": "https://cdn.skypack.dev/react-dom",
+    "react": "/node_modules/react/umd/react.production.min.js",
+    "react-dom": "/node_modules/react-dom/umd/react-dom.production.min.js",
     "./App": "./src/App",
     "./context/theme": "./src/context/theme",
     "./index.css": "./src/index.css"
   }
 }
+
 
 ```
 
@@ -302,19 +303,21 @@ Now refactored index.hmtl using the import maps
 ```
 and main.tsx looks like
 ```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { ThemeProvider } from "./context/theme";
+import "./index.css";
 
-// Used mapped imports from import-map.json
-import { ThemeProvider } from 'context/theme';
-import './index.css';
-import App from 'App';
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <ThemeProvider>
-    <App />
-  </ThemeProvider>
+ReactDOM.render(
+  <React.StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
+
 
 ```
 
