@@ -25,50 +25,61 @@ import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
-// __dirname equivalent in ES modules
+// Get __dirname equivalent in ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-
 export default {
     entry: './src/main.tsx',
     output: {
+        path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
-                exclude: /node_modules/
+                exclude: /node_modules/,
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ['style-loader', 'css-loader'],
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
-                type: 'asset/resource'
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[hash].[ext]',
+                            outputPath: 'images', // Specifies the directory for images
+                        },
+                    }]
             }
-        ]
+
+        ],
     },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
-        })
+            template: './public/index.html',
+        }),
     ],
     devServer: {
         static: {
-            directory: path.join(__dirname, 'dist'),
+            directory: path.join(__dirname, 'public'),
         },
         compress: true,
-        port: 9000
-    }
+        port: 3000,
+    },
+optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
 };
 
 
@@ -78,13 +89,17 @@ We are using ES Modules not commonJs hence we have js files
 
 ## update the scripts in package.json files
 ```javascript
-{
-  "scripts": {
-    "start": "webpack serve --config webpack.config.js --mode development",
-    "build": "webpack --config webpack.config.js --mode production"
-  }
-}
+"scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "webpack-dev": "webpack serve --mode development",
+    "webpack-build": "webpack --mode production"
+  },
 ```
+
+![image](https://github.com/user-attachments/assets/ca2ee5f0-f4a8-407d-98eb-7ff32e390da4)
 
 ## customized configuartion for css and images
 
@@ -93,19 +108,33 @@ To efficiently handle CSS and images in your Webpack configuration, you can use 
 ```bash
 module: {
         rules: [
-            
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
-                type: 'asset/resource'
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[hash].[ext]',
+                            outputPath: 'images', // Specifies the directory for images
+                        },
+                    }]
             }
-        ]
+
+        ],
     },
 ```
-Here The style-loader and css-loader will process and inject CSS into your application, while file-loader (or asset/resource in Webpack 5) will handle importing image files. 
+Here The style-loader and css-loader will process and inject CSS into your application, while file-loader (or asset/resource in Webpack 5) will handle importing image files.
+
+
 
 
 # Advanced Bundling Techniques
