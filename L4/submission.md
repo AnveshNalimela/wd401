@@ -291,6 +291,7 @@ Runs Cypress integration tests using the Cypress GitHub action. It:
 
 ![image](https://github.com/user-attachments/assets/d40cdf78-b7ed-4821-b7d9-d94b1f6cbf4e)
  and deploy job : Runs only if the tests pass and the push is to the main branch. It builds and starts the application, preparing it for deployment.
+ and link for the action flow of this project:https://github.com/AnveshNalimela/sportbuzz/actions
 ![image](https://github.com/user-attachments/assets/cf960f4e-f1a1-4f68-aad1-38aa257e3416)
 
 
