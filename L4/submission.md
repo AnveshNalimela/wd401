@@ -114,6 +114,70 @@ Setup of vitest is similar to jest.Scripts to run the vitest unit testing are  a
  
  ![image](https://github.com/user-attachments/assets/107c5b0d-f29b-4f38-97b4-d5f25fce81dc)
 
+ ## Cypress testing framwork configuartion and setup:
+ Install the cypress in your project using npm (or else gloabally based on your requirment)
+ ```javascript
+npm install cypress --save-dev
+ ```
+Above command install the cypress in your project and avaliable in node modules folder
+ ```js
+npx cypress open
+```
+Above command creates a folder in project named cypress to store the testing files and cypress.config.json file in root directory
+![image](https://github.com/user-attachments/assets/53eb80fb-7492-41c9-a91d-2b9903eaa931)
+
+
+
+
+Before going to testing we need to configure the cypress in the project by updating the cypress.config.json
+
+```json
+import { defineConfig } from "cypress";
+
+export default defineConfig({
+  e2e: {
+    setupNodeEvents(on, config) {
+      // implement node event listeners here
+    },
+    baseUrl: "http://localhost:5173/",
+  },
+  env: {
+    API_ENDPOINT: "https://wd301-capstone-api.pupilfirst.school", // or your actual API endpoint
+  },
+});
+
+```
+We have to add the scripts in package.json to test with the cypress
+```json
+ "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "webpack-dev": "webpack serve --mode development",
+    "webpack-build": "webpack --mode production",
+    "cypress:test": "npx cypress run",
+    "cypress:open": "npx cypress open",
+    "jest:test:watch": "jest --watch",
+    "jest:test": "jest",
+    "jest:test:coverage": "jest --silent --watchAll=false --coverage",
+    "vitest:test": "vitest",
+    "vitest:test:ci": "vitest run"
+  },
+```
+we have to run the script commad to run the cypress through the terminal
+```js
+npm run cypress:open
+```
+its open the window like this andd select the apporiate testing  option 
+![image](https://github.com/user-attachments/assets/6a5fa547-f53f-4278-a8b7-43633e5722ec)
+and then select the browser 
+![image](https://github.com/user-attachments/assets/2af9613b-6496-4af8-9a46-995096a7c41e)
+Add the new with .cy.ts extension and write the test suite for various components
+and ensure that application is running on the baseurl mentioned in selected browser
+![image](https://github.com/user-attachments/assets/d8bbd663-ccd7-46d0-aff7-1675df3f382a)
+
+
 ## Test Suite and Code Coverage:
 Code coverage respresnets the how much code get executed during the execution of progarm. A high quality code base would have a code coverage above 80 to 90% .
 it helps to know the quality of code and identify the code which is dead and not being used 
@@ -208,10 +272,25 @@ jobs:
         run: kill $(cat ./dev-server.pid)
 
 ```
+Above file is explained here
+
+The event is trigged whenever there is push or push request made to 'main' branch
+And the file includes two jobs mentioned one is test and other one is deploy
+let start with test job:
+The test job runs on the latest Ubuntu environment.
+it first checks out the code from the repository using the actions/checkout@v3 action.
+Sets up Node.js version 20 for the environment using the actions/setup-node@v3 action.
+Removes any existing node_modules and package-lock.json to ensure a clean installation of dependencies by running npm install.
+Runs unit tests using Vitest by executing npm run vitest:test:ci
+Runs Cypress integration tests using the Cypress GitHub action. It:
+- Builds the application with npm run build.
+- Starts the development server with npm run dev.
+- Waits for the application to be available at http://localhost:5173 before running the tests.
 
 ![image](https://github.com/user-attachments/assets/3418ae6b-e51f-4f09-89f2-fd4075cec604)
 
 ![image](https://github.com/user-attachments/assets/d40cdf78-b7ed-4821-b7d9-d94b1f6cbf4e)
+ and deploy job : Runs only if the tests pass and the push is to the main branch. It builds and starts the application, preparing it for deployment.
 ![image](https://github.com/user-attachments/assets/cf960f4e-f1a1-4f68-aad1-38aa257e3416)
 
 
