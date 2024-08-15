@@ -1,4 +1,7 @@
 ## Configuration of Environment Variables in a Dockerized Node.js Application
+
+https://www.loom.com/share/84822aec6a0d4923be1eb76c7ddffcb9
+
 When containerizing a Node.js application, it’s important to manage environment variables effectively, 
 especially when dealing with sensitive information like API keys and database credentials. 
 
