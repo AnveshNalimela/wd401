@@ -137,6 +137,13 @@ jobs:
 
 ### Explanation of the CI/CD Pipeline 
 
+name: CI/CD Pipeline: The name of the workflow, which will be displayed in the GitHub Actions tab.
+
+on:: Specifies the events that trigger the workflow.
+
+push:: The workflow triggers on pushes to the main branch.
+pull_request:: The workflow triggers on pull requests targeting the main branch.
+
 #### Pipeline Stages:
 
 #### Code Validation (Linting):
@@ -144,6 +151,13 @@ jobs:
 Linting checks your code for errors and style issues.
 If the linting fails, an error is reported to a Slack or Discord channel.
 ![image](https://github.com/user-attachments/assets/b753443d-b5dc-40b5-b3fe-03c58fbf0fe0)
+
+Specified that the job will run on the latest version of Ubuntu provided by GitHub.
+Checks out the repository's code so that it is been used in the workflow.
+Sets up a Node.js environment with version 18
+Installs the necessary npm dependencies specified in package.json.
+Executes the linter script, which checks the codebase for any linting errors (using eslints).
+If the linter fails, this step sends a notification toDiscord using the curl command. The message includes details about the commit that failed.
 
 #### Testing:
 
@@ -156,8 +170,13 @@ Using Cypress to validate the integration of different parts of your application
 ![image](https://github.com/user-attachments/assets/fe4e46f9-3487-4fe6-ab30-5f866585f4aa)
 
 ![image](https://github.com/user-attachments/assets/3f7c4efd-4214-49d2-bf9f-14ed25afd2f1)
-
-
+This job handles running tests to ensure the application's functionality.
+Checks out the repository's code.
+Sets up a Node.js environment with version 20.
+Removes the node_modules directory and the package-lock.json file to ensure a clean state before reinstalling all dependencies.
+Runs unit tests using Vitest, a testing framework.
+Runs integration tests using Cypress. It first builds the application, starts the development server, and waits for it to be available on localhost:5175 before running the tests.
+Sends a notification to Slack/Discord if any of the tests fail, including information about the commit that caused the failure.
 
 #### Building Docker Image:
 
@@ -165,6 +184,13 @@ The Docker image is built from the latest code.
 If successful, the image is tagged and pushed to Docker Hub.
 ![image](https://github.com/user-attachments/assets/2a9df46e-bf05-4f69-8503-5e612aa944f4)
 
+This job handles building and pushing the Docker image to Docker Hub.
+Checks out the repository's code.
+Logs into Docker Hub using the credentials stored in GitHub Secrets.
+Builds a Docker image and tags it with the commit SHA as the version. The . indicates that the Dockerfile is in the root directory
+Pushes the Docker image tagged with the commit SHA to Docker Hub.
+Tags the Docker image with the latest tag.
+Sends a notification to Discord if the Docker image build or push fails, with details about the commit
 #### Deployment:
 
 
