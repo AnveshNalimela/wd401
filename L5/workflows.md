@@ -143,20 +143,37 @@ jobs:
 
 Linting checks your code for errors and style issues.
 If the linting fails, an error is reported to a Slack or Discord channel.
-Testing:
+![image](https://github.com/user-attachments/assets/b753443d-b5dc-40b5-b3fe-03c58fbf0fe0)
+
+#### Testing:
 
 ##### Unit Tests: 
 Using Vitest to ensure individual units of code function correctly.
+![image](https://github.com/user-attachments/assets/a61f41f5-57f5-4703-a259-75e7a336f9d4)
+
 #### Integration Tests: 
 Using Cypress to validate the integration of different parts of your application.
+![image](https://github.com/user-attachments/assets/fe4e46f9-3487-4fe6-ab30-5f866585f4aa)
+
+![image](https://github.com/user-attachments/assets/3f7c4efd-4214-49d2-bf9f-14ed25afd2f1)
+
+
+
 #### Building Docker Image:
 
 The Docker image is built from the latest code.
 If successful, the image is tagged and pushed to Docker Hub.
-Deployment:
+![image](https://github.com/user-attachments/assets/2a9df46e-bf05-4f69-8503-5e612aa944f4)
+
+#### Deployment:
+
 
 The application is deployed by pulling the latest Docker image and running it on a server.
 The pipeline verifies that the application is running properly.
 
 #### Error Reporting:
 If any stage fails, detailed error messages are sent to a Slack or Discord channel.
+![image](https://github.com/user-attachments/assets/024d6dff-6de9-44e0-ad67-22d34775d91f)
+
+
+![image](https://github.com/user-attachments/assets/9bd667a3-b935-4f2a-ba7d-19093e395dc9)
