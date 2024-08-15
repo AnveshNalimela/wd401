@@ -135,4 +135,28 @@ jobs:
           curl -X POST -H 'Content-type: application/json' --data '{"content":"Docker image deploy failed in CI pipeline for commit ${{ github.sha }}. Check the logs for details."}' ${{ secrets.WEBHOOK_URL }}
 ```
 
+### Explanation of the CI/CD Pipeline 
 
+#### Pipeline Stages:
+
+#### Code Validation (Linting):
+
+Linting checks your code for errors and style issues.
+If the linting fails, an error is reported to a Slack or Discord channel.
+Testing:
+
+##### Unit Tests: 
+Using Vitest to ensure individual units of code function correctly.
+#### Integration Tests: 
+Using Cypress to validate the integration of different parts of your application.
+#### Building Docker Image:
+
+The Docker image is built from the latest code.
+If successful, the image is tagged and pushed to Docker Hub.
+Deployment:
+
+The application is deployed by pulling the latest Docker image and running it on a server.
+The pipeline verifies that the application is running properly.
+
+#### Error Reporting:
+If any stage fails, detailed error messages are sent to a Slack or Discord channel.
