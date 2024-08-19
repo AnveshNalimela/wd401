@@ -12,7 +12,9 @@ Create docker.yml workflow file in .github/workflows folder
 In the YAML file, we can define different jobs and steps that will run when certain events happen, like a push to the main branch.
 
 ```docker.yml
-name: CI/CD Pipeline
+
+
+      name: CI/CD Pipeline
 
 on:
   push:
@@ -137,6 +139,20 @@ jobs:
         if: failure()
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{"content":"Docker image deploy failed in CI pipeline for commit ${{ github.sha }}. Check the logs for details."}' ${{ secrets.WEBHOOK_URL }}
+  netlify-deploy:
+    name: Trigger Netlify Build
+    runs-on: ubuntu-latest
+    needs: build-docker-image
+    steps:
+      - name: Trigger Netlify Build Hook
+        run: |
+          curl -X POST ${{ secrets.deployHook }}
+
+      - name: Report errors to Slack/Discord
+        if: failure()
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{"content":"Netlify deployment failed in CI pipeline for commit ${{ github.sha }}. Check the logs for details."}' ${{ secrets.WEBHOOK_URL }}
+
 ```
 
 ### Explanation of the CI/CD Pipeline 
