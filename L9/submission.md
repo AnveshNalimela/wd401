@@ -1,3 +1,6 @@
+
+https://www.loom.com/share/18fcd218353c4452b29d56b3a65e6d7a (use heaphones for better sound)
+
 ## Add an error tracking system in your React project
 we are going to use Sentry for error tracking in the react application(SportBuzz)
 Sentry provides In addition to capturing errors, you can monitor interactions between multiple services or applications by enabling tracing.
