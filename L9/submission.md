@@ -59,6 +59,28 @@ and Run the application in preview mode
 ![image](https://github.com/user-attachments/assets/ed3f3335-4cc3-4beb-bbd9-85d37501c39a)
 
 and now our application is configured with error tracking system.
+
+Lets test it and add these line(src/match/match_details.tsx)
+```tsx
+const goBack = () => {
+    const token = localStorage.getItem("authToken") ?? "";
+    throw new Error("You caused an error");
+    if (token) {
+      navigate("/account");
+    } else {
+      navigate("/");
+    }
+  };
+```
+
+it trigger an error when go back is clicked and sentry detects the casuse
+![image](https://github.com/user-attachments/assets/074a7127-8c79-48a2-9625-3614bd204382)
+
+![image](https://github.com/user-attachments/assets/e1df6011-4ec7-4b6c-ba83-c303729c938c)
+
+![image](https://github.com/user-attachments/assets/419117ad-3b3f-455f-a65c-432fe8da7c3e)
+
+
 ### Explain how did you use a debugger to track a bug in your application?
 When your code execution reaches debugger line, it will pause, and you can examine the current state in your browser's developer tools
 ![image](https://github.com/user-attachments/assets/8f2c0ea3-03ab-4d85-b571-a2f1a73637ba)
