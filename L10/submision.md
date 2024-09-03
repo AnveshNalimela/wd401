@@ -10,3 +10,17 @@ Prefernces of user can changed by instructiong the AI through text or voice inpu
 here are several areas where the integration of AI could significantly enhance user experience and add value
 
 
+## If you decide to experiment with integrating Generative AI features, report on any technical, practical, or conceptual challenges you faced.
+I Wanted to experiment with integarting Generative AI features into my sportbuzz application  which is designed for sports enthusiasts to provide real-time match scores and up-to-date sports news articles.
+But there are many chanllenges First of all the finding the generative model which is open-source and free to use.
+Securing the API keys in the codebase and integrating with model through API is really challenging.
+Intergating the model into the application using the API keys and testing whether the model is responding to our input from the application then  we need to create the UI in application for interacting with AI tool from client side. 
+Now the model would able to recieve the prompts and respond to prompts. But we need to make the reponse more specific in context of application for that we need to add additional configuation to model to reposnd in context of application.
+After the configuring the model accordingly the application later the model is responding accordingly .But we cannot expect the user to give the valid or no-ambigious input so we need to prepocess the data before passing the prompt to model and if the input is unclear the make the model to ask for clarifications
+Now the model is ready to recieve the input and reponds as accordingly
+Inorder to enhnace the user experice we need to add additional features to model to perform some tasks through prompts.So we need to make the model to perform some kind of opertion.In my case summarize the articles or updating the preferncens of user trhrough text prompt.
+we need to access the data regaring the articles from state and pass it to model and then summarize the entire article and responding with summarized text is huge task for me.
+
+
+
+
