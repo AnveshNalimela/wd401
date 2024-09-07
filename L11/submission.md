@@ -1,11 +1,16 @@
+### Video for Workflow Using Pull Requests, JavaScript Bundling & Integration,Compile-to-JS Languages
+1. https://www.loom.com/share/babd1743302a4f32b14bdd82b2dde435?sid=4b71d5be-eacf-4c1a-854d-b0ea401d3826
+2. https://www.loom.com/share/a49d8b0d1884404794d71f34a886c5be?sid=74a1c435-7bc9-43bb-bffe-98ccd6da82be
+
 ## Workflow Using Pull Requests
-"To manage and maintain the integrity of our codebase, I have implemented a workflow using pull requests. I've learned to open a pull request, make necessary changes, and submit the code for review. This practice has allowed for collaborative development, enabling me to receive feedback, update code accordingly, and ensure all contributions are aligned with project standards."
-
+ ![{CD1B1476-10B7-414B-9244-C3F849CAB9FE}](https://github.com/user-attachments/assets/b5835d0c-11d0-427c-be2b-18afe1b6e11a)
 ## JavaScript Bundling & Integration
-"I've delved into JavaScript bundling, understanding its importance in optimizing performance and reducing load times. Exploring various tools like Webpack, Vite, and Rollup, I've applied these concepts to my project to efficiently bundle JavaScript files, resulting in a faster and more responsive application."
-
+Bundling with vite default build
+![{B725496C-5A6E-4226-B1A4-77CF37124B40}](https://github.com/user-attachments/assets/6140da0e-e06b-4a74-b619-357e6b50711f)
+Bundling with webpack.config
+![{442155EA-8EFA-4BC7-939F-149CD87FE9CD}](https://github.com/user-attachments/assets/00fc8dea-3567-433c-8b7e-f25482f43c97)
 ## Compile-to-JS Languages
-"Deciding between TypeScript and Babel, I grasped their differences and made an informed choice for my project. I've chosen TypeScript to enhance type safety and maintainability, while still leveraging Babel for backward compatibility and additional JavaScript features."
+
 
 ## Testing Strategies
 "I've incorporated both unit and integration testing strategies into my project, ensuring robustness and reliability. I've generated coverage reports to identify gaps and set up automated testing workflows using GitHub Actions, facilitating continuous integration and early error detection."
