@@ -40,5 +40,17 @@ WorkFlow
 
 
 # Error Logging & Debugging && Generative AI Integration
+https://www.loom.com/share/c45cd4672fbd40cb94f2b588041ef611?sid=61fdce7b-2e2e-469f-8f70-42db94ededb0
+
+### Sentry
+![{54C1F69B-8040-4A9E-85DF-383A7BDB1CD0}](https://github.com/user-attachments/assets/0ea64aef-fdbf-4d51-ad7f-27f23621225b)
+
+### AI Integration
+![{1B222685-80D7-48D8-9C16-BD8EAD77856C}](https://github.com/user-attachments/assets/9f55b10d-7858-4582-8290-1aa220e03ba2)
+![{A5F318BC-CA8F-415E-B806-83EC5040CCC9}](https://github.com/user-attachments/assets/fbce405f-8411-4d1a-8ed7-a7da20aa1ed8)
+
+
+
+
 
 
