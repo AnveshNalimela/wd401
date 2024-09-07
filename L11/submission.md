@@ -28,20 +28,16 @@
 
 
 # CI/CD Pipeline && Application Environments
+3.https://www.loom.com/share/9a65eefa9ce94038a51000d36015bd1a?sid=70bfff88-2574-4fc6-b76f-f7788edc730b
+
+WorkFlow
+![{D371BA09-8811-4CA3-B305-E7D09C415F1A}](https://github.com/user-attachments/assets/642aae2d-e9e5-46ec-9f37-29ce2d1cbb8f)
+![{FC35CB0E-4B1B-4ABF-986E-1844A4844822}](https://github.com/user-attachments/assets/9547a2dd-33e7-4718-b74a-309f53e10809)
 
 
 
 
 
-## Internationalization & Localization
-"I implemented internationalization and localization features, allowing the application to cater to diverse user preferences and geographical locations. This involved setting up language support, dynamic content loading, and adapting the UI for different cultures and locales."
+# Error Logging & Debugging && Generative AI Integration
 
-## Error Logging & Debugging
-"I adopted comprehensive error logging and debugging practices to ensure that bugs are identified and resolved promptly. By integrating tools like Sentry or LogRocket, I set up real-time error monitoring, which has significantly reduced the time needed to detect and fix issues."
-
-## Generative AI Integration
-"I integrated Generative AI, such as ChatGPT, into my project to enhance user interaction by interpreting natural language input and providing dynamic responses. This feature leverages advanced machine learning models to understand and respond to user queries effectively, adding a modern, interactive layer to the application."
-
-## Conclusion
-"This journey has equipped me with a robust understanding of modern web development practices, from establishing a streamlined workflow using pull requests to integrating cutting-edge technologies like Generative AI. I am now well-versed in bundling and compiling JavaScript, implementing testing strategies, setting up CI/CD pipelines, and deploying applications in secure, scalable environments. These skills have greatly enhanced the quality and performance of my web application, preparing me for future challenges in the development landscape."
 
