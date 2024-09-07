@@ -12,17 +12,26 @@
 
 
 
-## Testing Strategies
-"I've incorporated both unit and integration testing strategies into my project, ensuring robustness and reliability. I've generated coverage reports to identify gaps and set up automated testing workflows using GitHub Actions, facilitating continuous integration and early error detection."
+# Video Realted Testing Strategies && Containerization
+3.https://www.loom.com/share/46a576ccb75a419e90f57a5dfde52b93?sid=b517087d-0fe8-4c0d-acb4-a347b5f60c22
+#### Unit testing results
+![{1A2EB511-06AB-4187-B7F1-9A1A2CC80ACA}](https://github.com/user-attachments/assets/b6f1b8b8-c94b-46a4-827d-95f34a197b06)
+#### End-to-End Testing
 
-## CI/CD Pipeline
-"I established a CI/CD pipeline to automate the deployment process. This pipeline ensures seamless integration of code changes, automatic testing, building, and deployment, which has significantly improved the efficiency of my development workflow and reduced the risk of errors in production."
+![{8A9DAF4F-EFEA-4128-8957-8706557E45C5}](https://github.com/user-attachments/assets/c7a9ecdd-1726-48da-9fdb-ecbac2f7b0b1)
 
-## Application Environments
-"I deployed my application in cluster mode using PM2 to enhance performance and scalability. I also implemented environment variable configurations to separate development and production settings and applied security measures like HTTPS, rate limiting, and secure headers to safeguard the application."
+![{EDB79D14-4453-4C27-8CEA-2B25366D7321}](https://github.com/user-attachments/assets/2a9155fe-1532-4e34-a9bb-6227b7ead4c0)
 
-## Containerization
-"I containerized my application using Docker, making it platform-independent and easier to deploy. I configured environment variables within the containers and created a Docker Compose file to define multiple services, including a database service. I integrated this with a CI/CD pipeline to deploy the Dockerized application on a server automatically."
+
+### Dockerizing Results
+![{F06DC54F-2F9D-4B76-AF60-0C6EB71E70F5}](https://github.com/user-attachments/assets/4b0fc60d-ed45-4a38-9f72-9397e40997d2)
+
+
+# CI/CD Pipeline && Application Environments
+
+
+
+
 
 ## Internationalization & Localization
 "I implemented internationalization and localization features, allowing the application to cater to diverse user preferences and geographical locations. This involved setting up language support, dynamic content loading, and adapting the UI for different cultures and locales."
